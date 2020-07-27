@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "incremental": true,   
+    "target": "ES2019", 
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "./typings",
+      "./node_modules/@types"
+      ],                      
+    "allowSyntheticDefaultImports": false,
+    "esModuleInterop": false,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "typings/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**"
+  ],
+}
