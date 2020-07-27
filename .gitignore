@@ -1,3 +1,13 @@
 */node_modules
 */dist
-*/tsconfig.tsbuildinfo
+
+*.tsbuildinfo
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+*.lock
