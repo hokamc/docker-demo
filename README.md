@@ -18,17 +18,27 @@ A demo project that implement HA of application through docker and docker compos
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Code a simple web service](#code-a-simple-web-service)
+- [Create a simple web service](#create-a-simple-web-service)
+- [Build docker image](#build-docker-image)
+- [HA by docker and nginx](#ha-by-docker-and-nginx)
 - [Authors](#authors)
 
-## Code a simple web service
+## Create a simple web service
 
 A simple express app with typescript which port is 3000. <br>
-| path            | response       |
-| --------------- | -------------- |
-| /               | root           |
-| /hello?name=sth | { name : sth } |
 
+| path | response       |
+| ---- | -------------- |
+| /    | IP information |
+
+## Build docker image
+
+Create a dockerfile and build image
+
+
+## HA by docker and nginx
+
+Run multiple containers of app in same network
 
 
 
