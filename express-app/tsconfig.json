@@ -13,7 +13,6 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
     "typeRoots": [
-      "./typings",
       "./node_modules/@types"
       ],                      
     "allowSyntheticDefaultImports": false,
@@ -25,7 +24,6 @@
   },
   "include": [
     "src/**/*.ts",
-    "typings/**/*.ts"
   ],
   "exclude": [
     "node_modules/**"
