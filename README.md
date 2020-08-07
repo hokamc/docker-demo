@@ -12,7 +12,7 @@
 </div>
 
 <p align="center"> 
-A demo project that implement HA of application through docker and docker compose
+A demo project that implement High Availability of application through docker and docker compose
 <br></p>
 
 ## Table of Contents
@@ -20,7 +20,8 @@ A demo project that implement HA of application through docker and docker compos
 - [Table of Contents](#table-of-contents)
 - [Create a simple web service](#create-a-simple-web-service)
 - [Build docker image](#build-docker-image)
-- [HA by docker and nginx](#ha-by-docker-and-nginx)
+- [High Availability by docker and nginx](#high-availability-by-docker-and-nginx)
+- [High Availability by docker compose](#high-availability-by-docker-compose)
 - [Authors](#authors)
 
 ## Create a simple web service
@@ -60,7 +61,7 @@ ENTRYPOINT [ "yarn", "start" ]
 - **EXPOSE** *expose port for container*
 - **ENTRYPOINT** *command run when start*
 
-## HA by docker and nginx
+## High Availability by docker and nginx
 
 Run multiple containers of app in same network and distribute requests by nginx load balancer.
 
@@ -73,7 +74,7 @@ done
 docker run -d -p 8000:80 --name webapp_proxy --network webapp_network -v $PWD/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:alpine
 ```
 
-> 3 containers of web app and 1 container of nginx will be started and connected together with a bridge network *webapp_network*
+3 containers of web app and 1 container of nginx will be started and connected together with a bridge network *webapp_network*
 
 ```conf
 events {}
@@ -97,7 +98,12 @@ http {
 }
 ```
 
+- **upstream** *a cluster of server for proxy*
+- **location** *direct request based on url*
 
+All requests will be directed to different servers such as webapp1,2,3 equally
+
+## High Availability by docker compose
 
 
 ## Authors
