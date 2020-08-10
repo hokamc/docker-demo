@@ -12,7 +12,7 @@
 </div>
 
 <p align="center"> 
-A demo project that implement High Availability of application through docker and docker compose
+A demo project that implement High Availability of application through docker and docker swarm respectively
 <br></p>
 
 ## Table of Contents
@@ -21,7 +21,8 @@ A demo project that implement High Availability of application through docker an
 - [Create a simple web service](#create-a-simple-web-service)
 - [Build docker image](#build-docker-image)
 - [High Availability by docker and nginx](#high-availability-by-docker-and-nginx)
-- [High Availability by docker compose](#high-availability-by-docker-compose)
+- [High Availability by docker swarm](#high-availability-by-docker-swarm)
+- [Conclusion](#conclusion)
 - [Authors](#authors)
 
 ## Create a simple web service
@@ -103,8 +104,31 @@ http {
 
 All requests will be directed to different servers such as webapp1,2,3 equally
 
-## High Availability by docker compose
+## High Availability by docker swarm
 
+Run replica tasks of app in a service and distribute requests by default swarm ingress.
+
+```bash
+docker swarm init
+```
+
+Let's start a single node swarm
+
+```bash
+docker service create \
+    --replicas=3 \
+    --name webapp \
+    -p 8000:3000 \
+    docker-demo/express-app:latest
+```
+
+Create a service with 3 replica tasks
+
+> Tasks are connected in a overlay netwoek 'ingress'; All requests from the service are distributed to differents tasks through the [IPVS](https://en.wikipedia.org/wiki/IP_Virtual_Server) 'a layer 4 load balancing'.
+
+## Conclusion
+
+We have successfully tried 2 differents way to implement high availability of apps by docker/nginx and docker swarm.
 
 ## Authors
 
