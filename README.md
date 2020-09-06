@@ -124,7 +124,7 @@ docker service create \
 
 Create a service with 3 replica tasks
 
-> Tasks are connected in a overlay netwoek 'ingress'; All requests from the service are distributed to differents tasks through the [IPVS](https://en.wikipedia.org/wiki/IP_Virtual_Server) 'a layer 4 load balancing'.
+> Tasks are connected in a overlay network 'ingress'; All requests from the service are distributed to differents tasks through the [IPVS](https://en.wikipedia.org/wiki/IP_Virtual_Server) 'a layer 4 load balancing'.
 
 ## Conclusion
 
